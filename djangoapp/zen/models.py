@@ -4,6 +4,18 @@ from django.db import models
 class ZenArticle(models.Model):
     title = models.CharField(verbose_name='Title', max_length=255)
     link = models.URLField(verbose_name='Source link', unique=True)
+    likes = models.IntegerField()
+    reads = models.IntegerField()
+    comments = models.IntegerField()
+    to_parse_interval: models.DurationField()
+    public_date: models.DateField()
+    public_time: models.TimeField()
+    length = models.IntegerField()
+    num_images = models.IntegerField()
+    audience = models.IntegerField()
+    visitors = models.IntegerField()
+    read_time: models.DurationField()
+    subscribers = models.IntegerField()
 
     class Meta:
         verbose_name = "Article"

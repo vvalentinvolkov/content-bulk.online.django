@@ -234,7 +234,7 @@ djangorestframework = "*"
 name = "faker"
 version = "11.3.0"
 description = "Faker is a Python package that generates fake data for you."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -424,7 +424,7 @@ pytest = ">=2.5.2"
 name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 
@@ -543,7 +543,7 @@ python-versions = ">=3.5"
 name = "text-unidecode"
 version = "1.3"
 description = "The most basic Text::Unidecode port"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -587,7 +587,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "fcbfee7940d1195b8ad1ebbe9f445889539717b165c2ebb1b6c4ed0b8b8bcfe0"
+content-hash = "286212d29a57ac589a502adb8eea5f93ebbf39c911cbd46c8cf62d9b2b211707"
 
 [metadata.files]
 asgiref = [

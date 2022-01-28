@@ -4,5 +4,6 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('zen.urls')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
 ]

@@ -7,19 +7,18 @@ class ZenArticle(models.Model):
     likes = models.IntegerField()
     reads = models.IntegerField()
     comments = models.IntegerField()
-    to_parse_interval: models.DurationField()
-    public_date: models.DateField()
-    public_time: models.TimeField()
+    to_parse_interval = models.IntegerField()
+    public_date = models.IntegerField()
     length = models.IntegerField()
     num_images = models.IntegerField()
     audience = models.IntegerField()
     visitors = models.IntegerField()
-    read_time: models.DurationField()
+    read_time = models.IntegerField()
     subscribers = models.IntegerField()
 
     class Meta:
         verbose_name = "Article"
-        db_table = 'zen_article'
+        db_table = 'zen_articles'
 
 
 class ZenFeed(models.Model):
@@ -30,4 +29,5 @@ class ZenFeed(models.Model):
 
     class Meta:
         verbose_name = "Feed"
+        db_table = 'zen_feeds'
 

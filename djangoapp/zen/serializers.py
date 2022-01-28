@@ -12,7 +12,7 @@ class ZenFeedSerializer(serializers.ModelSerializer):
         return ZenFeed.objects.create(**validated_data)
 
 
-class ZenArticleSerializer(serializers.ModelSerializer):
+class ZenArticleAuthSerializer(serializers.ModelSerializer):
     feeds = ZenFeedSerializer(many=True)
 
     class Meta:
@@ -25,3 +25,10 @@ class ZenArticleSerializer(serializers.ModelSerializer):
         for feed_data in feeds_data:
             ZenFeed.objects.create(article=article, **feed_data)
         return article
+
+
+class ZenArticleNotAuthSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ZenArticle
+        fields = ['title', 'link', 'likes', 'reads', 'comments', 'length', 'num_images', 'visitors', 'public_date', 'read_time']

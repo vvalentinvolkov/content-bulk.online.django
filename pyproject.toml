@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "content-bulk.online.django"
+version = "0.1.0"
+description = ""
+authors = ["bulkinegra_local <v.valentinvolkov@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0.1"
+djangorestframework = "^3.13.1"
+djoser = "^2.1.0"
+django-filter = "^21.1"
+djangorestframework-simplejwt = "<=5.0.0"
+drf-psq = "^1.1.0"
+django-cors-headers = "^3.11.0"
+progress = "^1.6"
+pytest-django = "^4.5.2"
+pytest-pythonpath = "^0.7.3"
+pytest = "^6.2.5"
+
+[tool.poetry.dev-dependencies]
+Faker = "^11.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

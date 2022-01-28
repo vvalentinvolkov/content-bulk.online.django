@@ -33,8 +33,7 @@ class Command(BaseCommand):
                     comments=fake.pyint(min_value=0, max_value=9999999),
                     to_parse_interval=fake.pyint(min_value=0, max_value=180*24*60*60),
                     public_date=fake.pyint(min_value=datetime.datetime(2021, 1, 1).timestamp(),
-                                           max_value=datetime.datetime(2022, 1, 1).timestamp()),
-                    public_time=fake.pyint(min_value=0, max_value=24*60*60),
+                                           max_value=datetime.datetime(2022, 1, 1).timestamp()),s
                     length=fake.pyint(min_value=0, max_value=9999),
                     num_images=fake.pyint(min_value=0, max_value=999999),
                     audience=fake.pyint(min_value=0, max_value=9999999),

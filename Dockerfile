@@ -9,4 +9,4 @@ COPY ./poetry.lock /code
 RUN pip install --no-cache-dir --upgrade poetry
 RUN poetry config virtualenvs.create false ; poetry install
 
-CMD ["gunicorn", "--conf", "app/gunicorn_conf.py"]
+CMD echo hello

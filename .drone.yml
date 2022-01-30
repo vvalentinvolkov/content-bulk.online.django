@@ -7,14 +7,14 @@ platform:
   arch: arm64
 
 steps:
-- name: pytest
-  image: python:3.10-bullseye
-  commands:
-  - pip install poetry
-  - poetry config virtualenvs.create false
-  - poetry install
-  - cd app
-  - pytest --import-mode=importlib
+#- name: pytest
+#  image: python:3.10-bullseye
+#  commands:
+#  - pip install poetry
+#  - poetry config virtualenvs.create false
+#  - poetry install
+#  - cd app
+#  - pytest --import-mode=importlib
 
 - name: docker
   image: plugins/docker

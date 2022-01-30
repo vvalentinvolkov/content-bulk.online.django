@@ -1,10 +1,11 @@
 FROM python:3.10-bullseye
 
-WORKDIR /code/app
+WORKDIR /code
 
-COPY app /code/app
+COPY ./app /code/app
 
 RUN pip install --no-cache-dir --upgrade poetry
-RUN poetry install
+RUN poetry config virtualenvs.create false ; poetry install
 
-CMD ["gunicorn", "--conf", "app/gunicorn_conf.py", "--bind", "127.0.0.1:8001"]
+ENTRYPOINT ["cd", "app"]
+CMD ["gunicorn", "--conf", "app/gunicorn_conf.py"]

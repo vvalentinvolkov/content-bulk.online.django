@@ -1,10 +1,8 @@
-from datetime import timedelta
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)f!bg02m0nu!3nq@x#f!&da#vx(62am+v7tqr#6e4qlpbf#*ik'
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000', 'http://127.0.0.1:3001']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://localhost:3001']
 DEBUG = True
-FILTERS_DEFAULT_LOOKUP_EXPR = 'icontains'
 ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,7 +33,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 ]
-ROOT_URLCONF = 'djangoapp.urls'
+ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -51,7 +49,7 @@ TEMPLATES = [
         },
     },
 ]
-WSGI_APPLICATION = 'djangoapp.wsgi.application'
+WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

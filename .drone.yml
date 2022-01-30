@@ -13,6 +13,8 @@ steps:
   - pip install poetry
   - poetry install
   - cd app
+  - pip list
+  - which python
   - pytest --import-mode=importlib
 
 - name: docker

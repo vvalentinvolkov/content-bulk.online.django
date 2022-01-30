@@ -11,10 +11,9 @@ steps:
   image: python:3.10-bullseye
   commands:
   - pip install poetry
+  - poetry config virtualenvs.create false --local
   - poetry install
   - cd app
-  - pip list
-  - which python
   - pytest --import-mode=importlib
 
 - name: docker

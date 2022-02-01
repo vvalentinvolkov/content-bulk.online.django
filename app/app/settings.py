@@ -5,7 +5,7 @@ SECRET_KEY = 'django-insecure-)f!bg02m0nu!3nq@x#f!&da#vx(62am+v7tqr#6e4qlpbf#*ik
 CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000', 'http://127.0.0.1:3001']
 DEBUG = True
 FILTERS_DEFAULT_LOOKUP_EXPR = 'icontains'
-ALLOWED_HOSTS = ["content-bulk.online"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

@@ -6,15 +6,27 @@ platform:
   os: linux
   arch: arm64
 
+services:
+- name: postgres
+  image: postgres:14.1-alpine
+  environment:
+    POSTGRES_HOST_AUTH_METHOD: trust
+
 steps:
-#- name: pytest
-#  image: python:3.10-bullseye
-#  commands:
-#  - pip install poetry
-#  - poetry config virtualenvs.create false
-#  - poetry install
-#  - cd app
-#  - pytest --import-mode=importlib
+- name: pytest
+  image: python:3.10-bullseye
+  environment:
+    DB_USER: postgres
+    DB_NAME: test
+    DB_HOST: postgres
+    DB_PORT: 5432
+  commands:
+  - pip install poetry
+  - poetry config virtualenvs.create false
+  - poetry install
+  - cd app
+  - python manage.py migrate
+  - pytest --import-mode=importlib
 
 - name: docker
   image: plugins/docker

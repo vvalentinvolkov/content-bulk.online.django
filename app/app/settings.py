@@ -4,8 +4,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)f!bg02m0nu!3nq@x#f!&da#vx(62am+v7tqr#6e4qlpbf#*ik'
 DEBUG = True
 FILTERS_DEFAULT_LOOKUP_EXPR = 'icontains'
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
-CORS_ALLOWED_ORIGINS = ['http://content-bulk.online']
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", 'http://content-bulk.online']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

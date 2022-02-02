@@ -11,6 +11,8 @@ services:
   image: postgres:14.1-alpine
   environment:
     POSTGRES_HOST_AUTH_METHOD: trust
+    POSTGRES_USER: postgres
+    POSTGRES_DB: test
 
 steps:
 - name: pytest
@@ -25,6 +27,7 @@ steps:
   - poetry config virtualenvs.create false
   - poetry install
   - cd app
+  - python manage.py makemigraions
   - python manage.py migrate
   - pytest --import-mode=importlib
 

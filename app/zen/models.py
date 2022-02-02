@@ -8,7 +8,7 @@ class ZenArticle(models.Model):
     reads = models.IntegerField()
     comments = models.IntegerField()
     to_parse_interval = models.IntegerField()
-    public_date = models.IntegerField()
+    public_datetime = models.IntegerField()
     length = models.IntegerField()
     num_images = models.IntegerField()
     audience = models.IntegerField()

@@ -6,6 +6,7 @@ DEBUG = True
 FILTERS_DEFAULT_LOOKUP_EXPR = 'icontains'
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", 'http://content-bulk.online']
 CORS_ALLOWED_ORIGINS = ['http://content-bulk.online']
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin'
 CSRF_TRUSTED_ORIGINS = ['http://content-bulk.online']
 INSTALLED_APPS = [
     'django.contrib.admin',

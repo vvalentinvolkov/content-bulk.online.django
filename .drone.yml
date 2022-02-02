@@ -4,32 +4,32 @@ name: default
 
 platform:
   os: linux
-  arch: arm64
+  arch: arm64/v8
 
-services:
-- name: postgres
-  image: postgres:14.1-alpine
-  environment:
-    POSTGRES_HOST_AUTH_METHOD: trust
-    POSTGRES_USER: postgres
-    POSTGRES_DB: test
+#services:
+#- name: postgres
+#  image: postgres:14.1-alpine
+#  environment:
+#    POSTGRES_HOST_AUTH_METHOD: trust
+#    POSTGRES_USER: postgres
+#    POSTGRES_DB: test
 
 steps:
-- name: pytest
-  image: python:3.10-bullseye
-  environment:
-    DB_USER: postgres
-    DB_NAME: test
-    DB_HOST: postgres
-    DB_PORT: 5432
-  commands:
-  - pip install poetry
-  - poetry config virtualenvs.create false
-  - poetry install
-  - cd app
-  - python manage.py makemigrations
-  - python manage.py migrate
-  - pytest --import-mode=importlib
+#- name: pytest
+#  image: python:3.10-bullseye
+#  environment:
+#    DB_USER: postgres
+#    DB_NAME: test
+#    DB_HOST: postgres
+#    DB_PORT: 5432
+#  commands:
+#  - pip install poetry
+#  - poetry config virtualenvs.create false
+#  - poetry install
+#  - cd app
+#  - python manage.py makemigrations
+#  - python manage.py migrate
+#  - pytest --import-mode=importlib
 
 - name: docker
   image: plugins/docker

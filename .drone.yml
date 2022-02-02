@@ -27,7 +27,7 @@ steps:
   - poetry config virtualenvs.create false
   - poetry install
   - cd app
-  - python manage.py makemigraions
+  - python manage.py makemigrations
   - python manage.py migrate
   - pytest --import-mode=importlib
 

@@ -1,3 +1,4 @@
+---
 kind: pipeline
 type: docker
 name: default
@@ -40,3 +41,9 @@ steps:
       from_secret: docker_password
     repo: valentinvolkov/content-bulk.online
     tags: latest
+  
+---
+kind: signature
+hmac: 8205670d38b9af9c80f5a94128294005ab9dc976d6cc38c19e96d6f175d92b89
+
+...

@@ -1,13 +1,13 @@
 import os
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-)f!bg02m0nu!3nq@x#f!&da#vx(62am+v7tqr#6e4qlpbf#*ik'
-DEBUG = True
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+DEBUG = False
 FILTERS_DEFAULT_LOOKUP_EXPR = 'icontains'
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", 'http://content-bulk.online']
-CORS_ALLOWED_ORIGINS = ['http://content-bulk.online']
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", 'http://content-bulk.online', 'https://content-bulk.online']
+CORS_ALLOWED_ORIGINS = ['http://content-bulk.online', 'https://content-bulk.online']
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin'
-CSRF_TRUSTED_ORIGINS = ['http://content-bulk.online']
+CSRF_TRUSTED_ORIGINS = ['http://content-bulk.online', 'https://content-bulk.online']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

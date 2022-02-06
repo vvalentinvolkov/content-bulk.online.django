@@ -34,7 +34,9 @@ steps:
 - name: docker
   image: plugins/docker
   settings:
-    username: valentinvolkov
-    password: uHFVJNFl0
+    username: 
+      from_secret: docker_username
+    password: 
+      from_secret: docker_password
     repo: valentinvolkov/content-bulk.online
     tags: latest

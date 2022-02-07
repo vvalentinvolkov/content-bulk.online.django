@@ -23,6 +23,6 @@ class ZenArticleBulkViewSet(PsqMixin, viewsets.ReadOnlyModelViewSet):
     psq_rules = {
         ('retrieve', 'list'): [
             Rule([IsAuthenticated], ZenArticleAuthSerializer),
-            Rule([AllowAny], ZenArticleAuthSerializer),
+            Rule([AllowAny], ZenArticleNotAuthSerializer),
         ]
     }

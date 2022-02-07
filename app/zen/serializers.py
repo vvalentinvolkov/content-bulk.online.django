@@ -31,4 +31,4 @@ class ZenArticleNotAuthSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ZenArticle
-        fields = ['title', 'link', 'likes', 'reads', 'comments', 'length', 'num_images', 'visitors', 'public_date', 'read_time']
+        fields = ['title', 'link', 'likes', 'reads', 'comments', 'length', 'num_images', 'visitors', 'read_time']

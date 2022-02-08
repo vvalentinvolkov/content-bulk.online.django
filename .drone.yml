@@ -37,6 +37,8 @@ steps:
     when:
       branch:
         - main
+      event:
+        - push
 ---
 kind: signature
 hmac: a78ec39fc9b7cf4497200d7c0d7fb4625f54a1e1ae38aa813cf90e050c23238e

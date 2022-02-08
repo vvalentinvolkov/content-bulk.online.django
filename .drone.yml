@@ -22,8 +22,12 @@ steps:
     - cd app
     - pytest --import-mode=importlib
   when:
+    branch:
+      - development
     event:
       - pull_request
+    action:
+      - opened
 
 - name: docker
   image: plugins/docker

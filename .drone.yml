@@ -7,30 +7,25 @@ platform:
   os: linux
   arch: arm64
 
-#services:
-#- name: postgres
-#  image: postgres:14.1-alpine
-#  environment:
-#    POSTGRES_HOST_AUTH_METHOD: trust
-#    POSTGRES_USER: postgres
-#    POSTGRES_DB: test
-
 steps:
-#- name: pytest
-#  image: python:3.10-bullseye
-#  environment:
-#    DB_USER: postgres
-#    DB_NAME: test
-#    DB_HOST: postgres
-#    DB_PORT: 5432
-#  commands:
-#  - pip install poetry
-#  - poetry config virtualenvs.create false
-#  - poetry install
-#  - cd app
-#  - python manage.py makemigrations
-#  - python manage.py migrate
-#  - pytest --import-mode=importlib
+- name: pytest
+  image: python:3.10-bullseye
+  environment:
+    DB_USER: postgres
+    DB_NAME: test
+    DB_HOST: postgres
+    DB_PORT: 5432
+  commands:
+  - pip install poetry
+  - poetry config virtualenvs.create false
+  - poetry install
+  - cd app
+  - pytest --import-mode=importlib
+  when:
+    event:
+      - pull_request
+    branch:
+      - development
 
 - name: docker
   image: plugins/docker
@@ -41,8 +36,13 @@ steps:
       from_secret: docker_password
     repo: valentinvolkov/content-bulk.online
     tags: latest
+  when:
+    event:
+      - push
+    branch:
+      - main
 ---
 kind: signature
-hmac: 8205670d38b9af9c80f5a94128294005ab9dc976d6cc38c19e96d6f175d92b89
+hmac: af320cd2dfbba0b0d2b9e1c5a51846369a510747e23e4b8aa16af3a32ed972c5
 
 ...

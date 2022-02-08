@@ -9,7 +9,7 @@ class TestZenArticleBulkView:
 
     @pytest.mark.django_db
     def test_pagination(self, set_test_data):
-        """"""
+        """test pagination params page and size (default size = 5, page = 0)"""
         set_test_data(10)
         c = Client()
         response = c.get('/zen_articles/?page=1&size=10')

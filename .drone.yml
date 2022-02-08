@@ -22,12 +22,7 @@ steps:
   - cd app
   - pytest --import-mode=importlib
   when:
-    event:
-      - pull_request
-    branch:
-      - main
-    action:
-      - opened
+    event: [ pull_request ]
 
 - name: docker
   image: plugins/docker
@@ -38,11 +33,9 @@ steps:
       from_secret: docker_password
     repo: valentinvolkov/content-bulk.online
     tags: latest
-  when:
-    event:
-      - push
-    branch:
-      - main
+    when:
+      branch: ["main"]
+      event: [push]
 ---
 kind: signature
 hmac: af320cd2dfbba0b0d2b9e1c5a51846369a510747e23e4b8aa16af3a32ed972c5

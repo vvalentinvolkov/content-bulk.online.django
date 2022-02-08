@@ -23,7 +23,7 @@ steps:
     - pytest --import-mode=importlib
   when:
     branch:
-      - development
+      - main
     event:
       - pull_request
     action:

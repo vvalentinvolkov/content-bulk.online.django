@@ -25,7 +25,7 @@ steps:
     event:
       - pull_request
     branch:
-      - development
+      - main
     action:
       - opened
 

@@ -28,8 +28,8 @@ class Command(BaseCommand):
                 article = ZenArticle.objects.create(
                     title=fake.bothify(text=f'Статья_{i} ????? ??? ????', letters=ru_letters),
                     link=fake.unique.url(),
-                    likes=fake.pyint(min_value=0, max_value=9999999),
-                    reads=fake.pyint(min_value=0, max_value=999999),
+                    likes=10*i,
+                    reads=100*i,
                     comments=fake.pyint(min_value=0, max_value=9999999),
                     to_parse_interval=fake.pyint(min_value=0, max_value=180*24*60*60),
                     public_datetime=fake.pyint(min_value=datetime.datetime(2021, 1, 1).timestamp(),

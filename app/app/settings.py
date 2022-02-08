@@ -21,6 +21,12 @@ STATIC_ROOT = os.environ.get('STATIC_ROOT')
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'file': {
+            'format': '{levelname} | {asctime} | {module} - {message}',
+            'style': '{',
+        },
+    },
     'filters': {
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
@@ -30,9 +36,10 @@ LOGGING = {
         'rest_api_file': {
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': 'logs/rest_api.log',
-            'when': 'W0',
+            'when': 'D',
             'interval': 1,
             'level': 'INFO',
+            'formatter': 'file'
         }
     },
     'loggers': {

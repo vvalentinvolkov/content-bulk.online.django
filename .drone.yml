@@ -16,13 +16,14 @@ steps:
     DB_HOST: postgres
     DB_PORT: 5432
   commands:
-  - pip install poetry
-  - poetry config virtualenvs.create false
-  - poetry install
-  - cd app
-  - pytest --import-mode=importlib
+    - pip install poetry
+    - poetry config virtualenvs.create false
+    - poetry install
+    - cd app
+    - pytest --import-mode=importlib
   when:
-    event: [pull_request]
+    event:
+      - pull_request
 
 - name: docker
   image: plugins/docker
@@ -34,8 +35,10 @@ steps:
     repo: valentinvolkov/content-bulk.online
     tags: latest
     when:
-      branch: ["main"]
-      event: [push]
+      branch:
+        - main
+      event:
+        - push
 ---
 kind: signature
 hmac: a78ec39fc9b7cf4497200d7c0d7fb4625f54a1e1ae38aa813cf90e050c23238e

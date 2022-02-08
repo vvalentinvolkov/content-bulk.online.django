@@ -7,10 +7,6 @@ platform:
   os: linux
   arch: arm64
 
-trigger:
-  - branch:
-      - main
-
 steps:
 - name: pytest
   image: python:3.10-bullseye
@@ -20,11 +16,14 @@ steps:
     DB_HOST: postgres
     DB_PORT: 5432
   commands:
-  - pip install poetry
-  - poetry config virtualenvs.create false
-  - poetry install
-  - cd app
-  - pytest --import-mode=importlib
+    - pip install poetry
+    - poetry config virtualenvs.create false
+    - poetry install
+    - cd app
+    - pytest --import-mode=importlib
+  when:
+    event:
+      - pull_request
 
 - name: docker
   image: plugins/docker
@@ -35,8 +34,11 @@ steps:
       from_secret: docker_password
     repo: valentinvolkov/content-bulk.online
     tags: latest
+    when:
+      branch:
+        - main
 ---
 kind: signature
-hmac: 1bfecc3a5dca05021a72681a08b3ae37f884929ccc17fc490fc3b7c05120b849
+hmac: a78ec39fc9b7cf4497200d7c0d7fb4625f54a1e1ae38aa813cf90e050c23238e
 
 ...

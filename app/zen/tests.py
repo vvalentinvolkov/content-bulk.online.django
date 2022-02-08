@@ -13,7 +13,7 @@ class TestZenArticleBulkView:
         set_test_data(10)
         c = Client()
         response = c.get('/zen_articles/?page=1&size=10')
-        assert response.data['last_page'] == 1
+        assert response.data['last_page'] == 2
         response = c.get('/zen_articles/?page=1&size=5')
         assert response.data['last_page'] == 2
 

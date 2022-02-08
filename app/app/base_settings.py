@@ -18,7 +18,6 @@ INSTALLED_APPS = [
     "corsheaders",
 
     'zen.apps.ZenConfig',
-    'scrapy_parser.apps.ScrapyParserConfig',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,9 +53,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticated',
-    # ]
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
 }
 AUTH_PASSWORD_VALIDATORS = [
     {

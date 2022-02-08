@@ -26,6 +26,8 @@ steps:
       - pull_request
     branch:
       - development
+    action:
+      - opened
 
 - name: docker
   image: plugins/docker

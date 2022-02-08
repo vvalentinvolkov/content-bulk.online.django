@@ -22,7 +22,7 @@ steps:
   - cd app
   - pytest --import-mode=importlib
   when:
-    event: [ pull_request ]
+    event: [pull_request]
 
 - name: docker
   image: plugins/docker
@@ -38,6 +38,6 @@ steps:
       event: [push]
 ---
 kind: signature
-hmac: af320cd2dfbba0b0d2b9e1c5a51846369a510747e23e4b8aa16af3a32ed972c5
+hmac: a78ec39fc9b7cf4497200d7c0d7fb4625f54a1e1ae38aa813cf90e050c23238e
 
 ...

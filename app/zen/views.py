@@ -24,6 +24,10 @@ class ZenArticleBulkViewSet(PsqMixin, viewsets.ModelViewSet):
     filter_backends = [OrderingFilter, DjangoFilterBackend]
     filterset_class = ZenArticleBulkFilter
 
+    def create(self, request, *args, **kwargs):
+        logger.debug(request.data)
+        return super().create(request, *args, **kwargs)
+
     # TODO: Запрашивать из бд только необходимые поля
     psq_rules = {
         ('retrieve', 'list'): [

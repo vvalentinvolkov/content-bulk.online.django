@@ -11,3 +11,32 @@ DATABASES = {
         'NAME': 'test.sqlite3',
     }
 }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'file': {
+            'format': '{levelname} | {asctime} | {module} - {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'test_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/test.log',
+            'level': 'DEBUG',
+            'formatter': 'file'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['test_file'],
+            'level': 'INFO',
+        },
+        'zen': {
+            'handlers': ['test_file'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+    }
+}
